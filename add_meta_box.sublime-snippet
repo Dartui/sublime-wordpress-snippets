@@ -8,26 +8,21 @@ public function add_${1:mymetaboxname}_metabox {
 	add_meta_box('$1', '${2:Title}', array(\$this, '$1_metabox_callback'), '${4:post_type_slug}', '${5:normal}', '${6:low}');
 }
 
-public function $1_metabox_callback(\$post) {
-	/* For example:
-	*	<label>Enter your first name:</label>
-	*	<input type="text" name="mymetaboxname[first_name]" />
-	*	<label>Enter your last name:</label>
-	*	<input type="text" name="mymetaboxname[last_name]" />
-	*/
-	$0
-}
+public function $1_metabox_callback(\$post) { ?>
+	${7:<label>Enter your first name:</label>
+	<input type="text" name="$1[first_name]" />
+	<label>Enter your last name:</label>
+	<input type="text" name="$1[last_name]" />}
+<?php }
 
 public function save_$1_metabox_data(\$post_id) {
-	/* For example:
-	*	if (!isset(\$_POST['mymetaboxname'])) {
-	*		return \$post_id;
-	*	}
-	*
-	*	foreach (\$_POST['mymetaboxname'] as \$key => \$field) {
-	*		update_post_meta(\$post_id, \$key, \$field);
-	*	}
-	*/
+	${8:if (!isset(\$_POST['$1'])) {
+		return \$post_id;
+	\}
+
+	foreach (\$_POST['$1'] as \$key => \$field) {
+		update_post_meta(\$post_id, \$key, \$field);
+	\}}
 }
 ]]></content>
 	<tabTrigger>wp_add_meta_box</tabTrigger>
