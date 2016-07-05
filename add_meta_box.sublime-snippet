@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+// Put this into your __construct function
+add_action('add_meta_boxes', array(\$this, 'add_$1_metabox'));
+add_action('save_post_$4', array(\$this, 'save_$1_metabox_data'));
+
+public function add_${1:mymetaboxname}_metabox {
+	add_meta_box('$1', '${2:Title}', array(\$this, '$1_metabox_callback'), '${4:post_type_slug}', '${5:normal}', '${6:low}');
+}
+
+public function $1_metabox_callback(\$post) {
+	/* For example:
+	*	<label>Enter your first name:</label>
+	*	<input type="text" name="mymetaboxname[first_name]" />
+	*	<label>Enter your last name:</label>
+	*	<input type="text" name="mymetaboxname[last_name]" />
+	*/
+	$0
+}
+
+public function save_$1_metabox_data(\$post_id) {
+	/* For example:
+	*	if (!isset(\$_POST['mymetaboxname'])) {
+	*		return \$post_id;
+	*	}
+	*
+	*	foreach (\$_POST['mymetaboxname'] as \$key => \$field) {
+	*		update_post_meta(\$post_id, \$key, \$field);
+	*	}
+	*/
+}
+]]></content>
+	<tabTrigger>wp_add_meta_box</tabTrigger>
+	<scope>source.php</scope>	
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+// Put this into your __construct function
+add_action('admin_menu', array(\$this, 'add_${1:menu_slug}_menu_page'));
+
+public function add_$1_menu_page() {
+	add_menu_page('${2:Page title}', '${3:Menu title}', '${4:manage_options}', '$1', array(\$this, '$1_menu_callback'), 'dashicons-${5:icon}', ${6:0});
+}
+
+public function $1_menu_callback() {
+	// Content goes here
+	$0
+}
+]]></content>
+	<tabTrigger>wp_add_menu_page</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

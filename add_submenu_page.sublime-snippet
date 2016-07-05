@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+// Put this into your __construct function
+add_action('admin_menu', array(\$this, 'add_${1:submenu_slug}_submenu_page'));
+
+public function add_$1_submenu_page() {
+	add_submenu_page('${2:parent_slug}', '${3:Page title}', '${4:Menu title}', '${5:manage_options}', '$1', array(\$this, '$1_menu_callback'));
+}
+
+public function $1_submenu_callback() {
+	// Content goes here
+	$0
+}
+]]></content>
+	<tabTrigger>wp_add_submenu_page</tabTrigger>
+	<scope>source.php</scope>
+</snippet>
