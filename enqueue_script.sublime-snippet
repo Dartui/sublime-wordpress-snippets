@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+wp_enqueue_script('${1:handle_name}', '${2:source}'${3:, ${4:array('${5:jquery}')}}${6:, '${7:version}'}${8:, ${9:false}});
+]]></content>
+	<tabTrigger>wp_enqueue_script</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

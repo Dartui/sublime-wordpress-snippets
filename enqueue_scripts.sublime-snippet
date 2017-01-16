@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+${11:add_action('wp_enqueue_scripts', array(\$this, '${1:enqueue_scripts}'));}}
+
+public function $1() {
+	wp_enqueue_script('${2:handle_name}', '${3:source}'${4:, ${5:array('${6:jquery}')}}${7:, '${8:version}'}${9:, ${10:false}});
+}
+]]></content>
+	<tabTrigger>wp_enqueue_scripts</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

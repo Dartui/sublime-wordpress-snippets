@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+/* Plugin Name: ${1:My new plugin}
+ * Plugin URI: ${2:http://example.com}
+ * Description: ${3:Description}
+ * Version: ${4:1.0}
+ * Author: ${5:Me}${6:
+ * Author URI: ${7:http://example.com}}${8:
+ * Text Domain: ${9:text-domain}}${10:
+ * Domain Path: ${11:domain-path}}${12:
+ * Network: ${13:network}}
+ */
+
+if (!class_exists('${14:MyPluginClass}')) {
+	class $14 {
+		public function __construct() {
+			$0
+		}
+	}
+
+	new $14();
+}
+]]></content>
+	<tabTrigger>wp_plugin_wrapper</tabTrigger>
+	<scope>source.php</scope>
+</snippet>
