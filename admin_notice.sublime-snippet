@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+${6:// Put this into your __construct function
+add_action('admin_notices', array(\$this, '${1:admin_notice}'));}
+
+public function $1() {
+	\$class          = '${2:success|warning|error}';
+	\$message        = '${3:message}';
+	\$is_dismissible = ${4:true|false};
+	
+	printf(
+		'<div class="notice notice-%s %s"><p>%s</p></div>',
+		\$class,
+		\$message,
+		\$is_dismissible ? 'is-dismissible' : ''
+	);
+}
+]]></content>
+	<tabTrigger>wp_admin_notice</tabTrigger>
+	<scope>source.php</scope>
+</snippet>
